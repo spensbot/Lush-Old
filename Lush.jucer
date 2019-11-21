@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="lGKpFw" name="Lush" projectType="audioplug" jucerVersion="5.4.5"
+              companyName="Sailing To Mars" pluginVST3Category="Delay,Fx,Reverb">
+  <MAINGROUP id="w3XpyC" name="Lush">
+    <GROUP id="{09C38D79-2402-D4DB-F287-88BF09047AF9}" name="Source">
+      <FILE id="PXs0yU" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="tp4mR2" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="mpWdec" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="DVpZuS" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <GROUP id="{837B8F6C-FF12-26EB-62D6-7BB59D51ACDA}" name="LookAndFeel">
+      <FILE id="GpNnla" name="LushLookAndFeel.cpp" compile="1" resource="0"
+            file="Source/LushLookAndFeel.cpp"/>
+      <FILE id="ZXoom8" name="LushLookAndFeel.h" compile="0" resource="0"
+            file="Source/LushLookAndFeel.h"/>
+    </GROUP>
+    <GROUP id="{D5892893-FC38-A659-B508-1DA71EF90CCD}" name="Components">
+      <GROUP id="{E86F82E0-15D0-7321-07C9-2BF9F102E6F2}" name="Low Level">
+        <FILE id="SWasJv" name="DecibelSlider.cpp" compile="1" resource="0"
+              file="Source/DecibelSlider.cpp"/>
+        <FILE id="FHcvlr" name="DecibelSlider.h" compile="0" resource="0" file="Source/DecibelSlider.h"/>
+        <FILE id="nXG7Wl" name="DelaySettings.cpp" compile="1" resource="0"
+              file="Source/DelaySettings.cpp"/>
+        <FILE id="BJQU9P" name="DelaySettings.h" compile="0" resource="0" file="Source/DelaySettings.h"/>
+        <FILE id="PkVdBd" name="LabeledComponent.cpp" compile="1" resource="0"
+              file="Source/LabeledComponent.cpp"/>
+        <FILE id="VcIvmD" name="LabeledComponent.h" compile="0" resource="0"
+              file="Source/LabeledComponent.h"/>
+        <FILE id="EIYVs1" name="MasterGainMixer.cpp" compile="1" resource="0"
+              file="Source/MasterGainMixer.cpp"/>
+        <FILE id="npacd2" name="MasterGainMixer.h" compile="0" resource="0"
+              file="Source/MasterGainMixer.h"/>
+      </GROUP>
+      <FILE id="z0vyuS" name="Content.cpp" compile="1" resource="0" file="Source/Content.cpp"/>
+      <FILE id="jSScP3" name="Content.h" compile="0" resource="0" file="Source/Content.h"/>
+      <FILE id="UaAWhk" name="Footer.cpp" compile="1" resource="0" file="Source/Footer.cpp"/>
+      <FILE id="vsQQW5" name="Footer.h" compile="0" resource="0" file="Source/Footer.h"/>
+      <FILE id="tn0iOF" name="Header.cpp" compile="1" resource="0" file="Source/Header.cpp"/>
+      <FILE id="dfKKuG" name="Header.h" compile="0" resource="0" file="Source/Header.h"/>
+      <FILE id="pzchvM" name="SsDebugger.cpp" compile="1" resource="0" file="Source/SsDebugger.cpp"/>
+      <FILE id="Qcs6nl" name="SsDebugger.h" compile="0" resource="0" file="Source/SsDebugger.h"/>
+    </GROUP>
+    <GROUP id="{65C6EF51-4AE4-B06B-8DDA-12A6BF74CD03}" name="DSP">
+      <FILE id="dN5Gyq" name="LushEngine.cpp" compile="1" resource="0" file="Source/LushEngine.cpp"/>
+      <FILE id="jgWzq5" name="LushEngine.h" compile="0" resource="0" file="Source/LushEngine.h"/>
+      <FILE id="Kncu3M" name="OscillatingPosition.cpp" compile="1" resource="0"
+            file="Source/OscillatingPosition.cpp"/>
+      <FILE id="XBKEul" name="OscillatingPosition.h" compile="0" resource="0"
+            file="Source/OscillatingPosition.h"/>
+      <FILE id="TWJwwk" name="RamperBase.cpp" compile="1" resource="0" file="Source/RamperBase.cpp"/>
+      <FILE id="lvnysq" name="RamperBase.h" compile="0" resource="0" file="Source/RamperBase.h"/>
+      <FILE id="WzaG2T" name="RamperLinear.cpp" compile="1" resource="0"
+            file="Source/RamperLinear.cpp"/>
+      <FILE id="uq20KR" name="RamperLinear.h" compile="0" resource="0" file="Source/RamperLinear.h"/>
+      <FILE id="FUdrKA" name="RecirculatingBuffer.cpp" compile="1" resource="0"
+            file="Source/RecirculatingBuffer.cpp"/>
+      <FILE id="c2U2IJ" name="RecirculatingBuffer.h" compile="0" resource="0"
+            file="Source/RecirculatingBuffer.h"/>
+      <FILE id="b7nd7U" name="RecirculatingBufferReader.cpp" compile="1"
+            resource="0" file="Source/RecirculatingBufferReader.cpp"/>
+      <FILE id="A5E61V" name="RecirculatingBufferReader.h" compile="0" resource="0"
+            file="Source/RecirculatingBufferReader.h"/>
+    </GROUP>
+    <GROUP id="{9EFB3AAC-2422-C5CB-CFC2-F762CDECC0C8}" name="Synthesis">
+      <FILE id="p9PIfg" name="WavetableGenerator.cpp" compile="1" resource="0"
+            file="Source/WavetableGenerator.cpp"/>
+      <FILE id="STdJjA" name="WavetableGenerator.h" compile="0" resource="0"
+            file="Source/WavetableGenerator.h"/>
+      <FILE id="sfOZeW" name="WavetableOscillator.cpp" compile="1" resource="0"
+            file="Source/WavetableOscillator.cpp"/>
+      <FILE id="cyCE95" name="WavetableOscillator.h" compile="0" resource="0"
+            file="Source/WavetableOscillator.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>

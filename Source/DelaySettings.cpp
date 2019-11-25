@@ -19,7 +19,7 @@ delayTimeComponent("Delay (s)", delayTimeSlider),
 delayModDepthComponent("Mod Depth (ms)", delayModDepthSlider),
 delayModFrequencyComponent("Mod Hz", delayModFrequencySlider),
 spacingComponent("Spacing", spacingSlider),
-delayLinesComponent("Lines", delayLinesComponent)
+delayLinesComponent("Lines", delayLinesSlider)
 
 {
     feedbackSliderAttachment.reset(new SliderAttachment(parameters, "delayFeedback", feedbackSlider));
@@ -28,14 +28,14 @@ delayLinesComponent("Lines", delayLinesComponent)
     delayModFrequencySliderAttachment.reset(new SliderAttachment(parameters, "delayModFrequency", delayModFrequencySlider));
     spacingSliderAttachment.reset(new SliderAttachment(parameters, "spacing", spacingSlider));
     delayLinesSliderAttachment.reset(new SliderAttachment(parameters, "delayLines", delayLinesSlider));
-    
+
     addAndMakeVisible(feedbackComponent);
     addAndMakeVisible(delayTimeComponent);
     addAndMakeVisible(delayModDepthComponent);
     addAndMakeVisible(delayModFrequencyComponent);
     addAndMakeVisible(spacingComponent);
     addAndMakeVisible(delayLinesComponent);
-    
+
     feedbackSlider.setSliderStyle(Slider::LinearVertical);
     feedbackSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 80, 20);
     delayTimeSlider.setSliderStyle(Slider::LinearVertical);

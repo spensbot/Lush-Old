@@ -45,12 +45,12 @@
       <FILE id="Qcs6nl" name="SsDebugger.h" compile="0" resource="0" file="Source/SsDebugger.h"/>
     </GROUP>
     <GROUP id="{65C6EF51-4AE4-B06B-8DDA-12A6BF74CD03}" name="DSP">
+      <FILE id="ooAYxi" name="DelayGroup.cpp" compile="1" resource="0" file="Source/DelayGroup.cpp"/>
+      <FILE id="F2vvtX" name="DelayGroup.h" compile="0" resource="0" file="Source/DelayGroup.h"/>
       <FILE id="dN5Gyq" name="LushEngine.cpp" compile="1" resource="0" file="Source/LushEngine.cpp"/>
       <FILE id="jgWzq5" name="LushEngine.h" compile="0" resource="0" file="Source/LushEngine.h"/>
-      <FILE id="Kncu3M" name="OscillatingPosition.cpp" compile="1" resource="0"
-            file="Source/OscillatingPosition.cpp"/>
-      <FILE id="XBKEul" name="OscillatingPosition.h" compile="0" resource="0"
-            file="Source/OscillatingPosition.h"/>
+      <FILE id="QAEjC6" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
+      <FILE id="CgjrpI" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
       <FILE id="TWJwwk" name="RamperBase.cpp" compile="1" resource="0" file="Source/RamperBase.cpp"/>
       <FILE id="lvnysq" name="RamperBase.h" compile="0" resource="0" file="Source/RamperBase.h"/>
       <FILE id="WzaG2T" name="RamperLinear.cpp" compile="1" resource="0"

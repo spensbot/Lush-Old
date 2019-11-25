@@ -19,11 +19,11 @@ LushEngine::LushEngine(AudioProcessorValueTreeState& _parameters)
     delayTime = parameters.getRawParameterValue("delayTime");
     delayModDepth = parameters.getRawParameterValue("delayModDepth");
     delayModFrequency = parameters.getRawParameterValue("delayModFrequency");
+    spacing = parameters.getRawParameterValue("spacing");
+    delayLines = parameters.getRawParameterValue("delayLines");
     
     dryGainRamper.initialize(Decibels::decibelsToGain(*dryDb), 0.001);
     wetGainRamper.initialize(Decibels::decibelsToGain(*wetDb), 0.001);
-    
-    delayTimeOscillator.reset(*delayModFrequency, *delayTime, *delayModDepth/1000);
 
     parameters.addParameterListener("dryGain", this);
     parameters.addParameterListener("wetGain", this);
@@ -31,28 +31,31 @@ LushEngine::LushEngine(AudioProcessorValueTreeState& _parameters)
     parameters.addParameterListener("delayTime", this);
     parameters.addParameterListener("delayModDepth", this);
     parameters.addParameterListener("delayModFrequency", this);
+    parameters.addParameterListener("spacing", this);
+    parameters.addParameterListener("delayLines", this);
 }
 LushEngine::~LushEngine(){}
 
-void LushEngine::setSampleRate(double sampleRate)
+void LushEngine::setSampleRate(double _sampleRate)
 {
-    delayTimeOscillator.sampleRate = sampleRate;
-    delayBufferReader.reset(sampleRate);
-    leftDelayBuffer.zero(delayBufferReader.getRequiredBufferSize(2.0));
-    rightDelayBuffer.zero(delayBufferReader.getRequiredBufferSize(2.0));
+    sampleRate = _sampleRate;
+    leftDelayBuffer.zero((int)(2.0 * sampleRate) + 1);
+    rightDelayBuffer.zero((int)(2.0 * sampleRate) + 1);
+    
+    delayGroup.setSampleRate(_sampleRate);
+    delayGroup.update(*delayTime/1000, *delayModDepth/1000, *delayModFrequency, *spacing/1000, *delayLines);
 }
               
 void LushEngine::process(AudioBuffer<float>& buffer)
 {
     //Lush Engine is made to be run with 2 channels (left/right)
-    
     auto* leftChannel = buffer.getWritePointer(0);
     auto* rightChannel = buffer.getWritePointer(1);
     
     for (auto sample=0 ; sample<buffer.getNumSamples() ; sample ++)
     {
         auto dry = leftChannel[sample];
-        auto wet = delayBufferReader.getSample(leftDelayBuffer, delayTimeOscillator.getSample());
+        auto wet = delayGroup.getNextWet(leftDelayBuffer);
         
         leftDelayBuffer.writeSample(dry + wet * *delayFeedback);
         
@@ -68,6 +71,6 @@ void LushEngine::parameterChanged(const String& parameterID, float newValue )
     } else if (parameterID == "wetGain") {
         wetGainRamper.updateTarget(Decibels::decibelsToGain(newValue));
     } else {
-        delayTimeOscillator.reset(*delayModFrequency, *delayTime, *delayModDepth/1000);
+        delayGroup.update(*delayTime/1000, *delayModDepth/1000, *delayModFrequency, *spacing/1000, *delayLines);
     }
 }

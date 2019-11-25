@@ -10,7 +10,7 @@
 
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Oscillator.h"
+#include "DelayGroup.h"
 #include "RamperLinear.h"
 #include "RecirculatingBuffer.h"
 #include "RecirculatingBufferReader.h"
@@ -20,7 +20,7 @@ public:
     LushEngine(AudioProcessorValueTreeState&);
     ~LushEngine();
     
-    void setSampleRate(double sampleRate);
+    void setSampleRate(double);
                   
     void process(AudioBuffer<float>& buffer);
     
@@ -30,18 +30,23 @@ private:
     
     AudioProcessorValueTreeState& parameters;
     
-    Oscillator<float> delayTimeOscillator;
+    //Oscillator<float> delayTimeOscillator;
     
-    float* dryDb;
-    float* wetDb;
-    float* delayTime;
-    float* delayFeedback;
-    float* delayModDepth;
-    float* delayModFrequency;
+    DelayGroup delayGroup;
+    
+    float* dryDb,
+    * wetDb,
+    * delayTime,
+    * delayFeedback,
+    * delayModDepth,
+    * delayModFrequency,
+    * spacing,
+    * delayLines;
     
     RamperLinear dryGainRamper, wetGainRamper;
     
     RecirculatingBuffer rightDelayBuffer, leftDelayBuffer;
-    RecirculatingBufferReader delayBufferReader;
+    
+    double sampleRate;
 
 };

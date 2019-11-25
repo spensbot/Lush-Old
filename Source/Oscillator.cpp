@@ -24,7 +24,7 @@ Oscillator<SampleType>::~Oscillator()
 }
 
 template <typename SampleType>
-void Oscillator<SampleType>::reset(SampleType frequency, SampleType _offset, SampleType _depth)
+void Oscillator<SampleType>::reset(SampleType frequency, SampleType _offset, SampleType _depth, bool randomPosition)
 {
     SampleType radsPerOscillation = MathConstants<SampleType>::twoPi;
     // frequency is effectively oscillations/second
@@ -34,6 +34,10 @@ void Oscillator<SampleType>::reset(SampleType frequency, SampleType _offset, Sam
     
     offset = _offset;
     depth = _depth;
+    
+    if (randomPosition) {
+        pos = random.nextDouble() * radsPerOscillation;
+    }
 }
 
 template <typename SampleType>

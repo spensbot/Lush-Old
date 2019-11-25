@@ -16,7 +16,7 @@ class LushLookAndFeel : public LookAndFeel_V4
 {
 public:
     LushLookAndFeel() {
-        setColour(ResizableWindow::backgroundColourId, Colour::fromHSV(0.0, 0.0, 0.0, 1.0));
+        setColour(ResizableWindow::backgroundColourId, Colour::fromHSV(0.0, 0.0, 0.2, 1.0));
     };
     
 };
@@ -24,8 +24,8 @@ public:
 struct LushColors {
     
     LushColors()
-    : contentBackground(Colour::fromHSV(0.0,0.0,0.0,1.0)),
-    border(Colour::fromHSV(0.5,0.8,0.8,1.0))
+    : contentBackground(Colour::fromHSV(0.0, 0.0, 0.2, 1.0)),
+    border(Colour::fromHSV(0.5, 0.8, 0.8, 1.0))
     {
         
     }

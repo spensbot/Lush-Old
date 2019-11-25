@@ -14,10 +14,11 @@
 
 //==============================================================================
 Content::Content(LushAudioProcessor& p)
-: processor(p), masterGainMixer(p.parameters), delaySettings(p.parameters)
+: processor(p), masterGainMixer(p.parameters), delaySettings(p.parameters), bufferDrawer(p.lushEngine.leftDelayBuffer.buffer)
 {
     addAndMakeVisible(masterGainMixer);
     addAndMakeVisible(delaySettings);
+    addAndMakeVisible(bufferDrawer);
 }
 
 Content::~Content()
@@ -33,6 +34,7 @@ void Content::resized()
 {
     auto localBounds = getLocalBounds();
     
+    bufferDrawer.setBounds(localBounds.removeFromTop(getHeight()/3));
     delaySettings.setBounds(localBounds.removeFromLeft(getWidth()/2));
     masterGainMixer.setBounds(localBounds);
     

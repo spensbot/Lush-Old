@@ -26,6 +26,8 @@ public:
     
     void parameterChanged(const String& parameterID, float newValue ) override;
     
+    RecirculatingBuffer rightDelayBuffer, leftDelayBuffer;
+    
 private:
     
     AudioProcessorValueTreeState& parameters;
@@ -44,8 +46,6 @@ private:
     * delayLines;
     
     RamperLinear dryGainRamper, wetGainRamper;
-    
-    RecirculatingBuffer rightDelayBuffer, leftDelayBuffer;
     
     double sampleRate;
 

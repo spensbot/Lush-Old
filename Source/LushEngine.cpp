@@ -39,8 +39,8 @@ LushEngine::~LushEngine(){}
 void LushEngine::setSampleRate(double _sampleRate)
 {
     sampleRate = _sampleRate;
-    leftDelayBuffer.zero((int)(2.0 * sampleRate) + 1);
-    rightDelayBuffer.zero((int)(2.0 * sampleRate) + 1);
+    leftDelayBuffer.zero((int)(10.0 * sampleRate) + 1);
+    rightDelayBuffer.zero((int)(10.0 * sampleRate) + 1);
     
     delayGroup.setSampleRate(_sampleRate);
     delayGroup.update(*delayTime/1000, *delayModDepth/1000, *delayModFrequency, *spacing/1000, *delayLines);

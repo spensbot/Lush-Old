@@ -23,10 +23,10 @@ public:
     void writeSample(float sample);
     float getSample(int offsetSamples);
     
+    AudioBuffer<float> buffer;
+    
 private:
     void increment();
-    
-    AudioBuffer<float> buffer;
     
     int writeIndex = 0;
     

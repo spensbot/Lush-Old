@@ -28,10 +28,10 @@ parameters (*this, &undoManager, Identifier ("APVTSTutorial"),
     std::make_unique<AudioParameterFloat> ("dryGain", "Dry Gain", -100.0f, 6.0f, -0.0f), //dB
     std::make_unique<AudioParameterFloat> ("wetGain", "Wet Gain", -100.0f, 6.0f, -6.0f), //dB
     std::make_unique<AudioParameterFloat> ("delayFeedback", "Delay Feedback", 0.0f, 1.0f, 0.75f),
-    std::make_unique<AudioParameterFloat> ("delayTime", "Delay Time", 5.0f, 100.0f, 10.0f), //ms
+    std::make_unique<AudioParameterFloat> ("delayTime", "Delay Time", 5.0f, 2000.0f, 10.0f), //ms
     std::make_unique<AudioParameterFloat> ("delayModDepth", "Delay Mod Depth", 0.0f, 2.0f, 0.0f), //ms
     std::make_unique<AudioParameterFloat> ("delayModFrequency", "Delay Mod Frequency", 0.0f, 5.0f, 2.0f), //hz
-    std::make_unique<AudioParameterFloat> ("spacing", "Spacing", 0.0f, 20.0f, 10.0f), //ms
+    std::make_unique<AudioParameterFloat> ("spacing", "Spacing", 0.0f, 500.0f, 10.0f), //ms
     std::make_unique<AudioParameterInt> ("delayLines", "Delay Lines", 1, 10, 1)
 }),
 lushEngine(parameters)

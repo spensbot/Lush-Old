@@ -17,6 +17,8 @@ LushAudioProcessorEditor::LushAudioProcessorEditor (LushAudioProcessor& p)
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
+    setResizable(true, true);
+    setResizeLimits(400, 300, 2000, 1000);
     setSize (800, 600);
     setLookAndFeel(&lushLookAndFeel);
     

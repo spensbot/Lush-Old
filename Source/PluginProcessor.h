@@ -61,9 +61,11 @@ public:
     String debugString = "No debug messages created\n...yet";
     AudioProcessorValueTreeState parameters;
     UndoManager undoManager;
+    RecirculatingBuffer rightDelayBuffer, leftDelayBuffer;
+    
+    LushEngine lushEngine;
 
 private:
-    LushEngine lushEngine;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (LushAudioProcessor)

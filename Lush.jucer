@@ -20,6 +20,9 @@
     </GROUP>
     <GROUP id="{D5892893-FC38-A659-B508-1DA71EF90CCD}" name="Components">
       <GROUP id="{E86F82E0-15D0-7321-07C9-2BF9F102E6F2}" name="Low Level">
+        <FILE id="e6TumI" name="BufferDrawer.cpp" compile="1" resource="0"
+              file="Source/BufferDrawer.cpp"/>
+        <FILE id="EB4HLK" name="BufferDrawer.h" compile="0" resource="0" file="Source/BufferDrawer.h"/>
         <FILE id="SWasJv" name="DecibelSlider.cpp" compile="1" resource="0"
               file="Source/DecibelSlider.cpp"/>
         <FILE id="FHcvlr" name="DecibelSlider.h" compile="0" resource="0" file="Source/DecibelSlider.h"/>

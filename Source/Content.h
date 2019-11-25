@@ -15,6 +15,7 @@
 #include "LushLookAndFeel.h"
 #include "MasterGainMixer.h"
 #include "DelaySettings.h"
+#include "BufferDrawer.h"
 
 //==============================================================================
 /*
@@ -35,6 +36,8 @@ private:
     
     MasterGainMixer masterGainMixer;
     DelaySettings delaySettings;
+    
+    BufferDrawer bufferDrawer;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Content)
 };

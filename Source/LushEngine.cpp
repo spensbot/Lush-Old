@@ -33,17 +33,28 @@ LushEngine::LushEngine(AudioProcessorValueTreeState& _parameters)
     parameters.addParameterListener("delayModFrequency", this);
     parameters.addParameterListener("spacing", this);
     parameters.addParameterListener("delayLines", this);
+    
+    allpassFilters[0].setup(.305, 0.7);
+    allpassFilters[1].setup(.037, 0.7);
+    allpassFilters[2].setup(.113, 0.7);
+    combFilters[0].setup(.773, 0.8);
+    combFilters[1].setup(.756, 0.75);
+    combFilters[2].setup(.739, 0.7);
 }
 LushEngine::~LushEngine(){}
 
 void LushEngine::setSampleRate(double _sampleRate)
 {
-    sampleRate = _sampleRate;
-    leftDelayBuffer.zero((int)(10.0 * sampleRate) + 1);
-    rightDelayBuffer.zero((int)(10.0 * sampleRate) + 1);
+    for (int filter=0 ; filter<3 ; filter++){
+        allpassFilters[filter].setSampleRate(_sampleRate, 10.0);
+        combFilters[filter].setSampleRate(_sampleRate, 10.0);
+    }
     
-    delayGroup.setSampleRate(_sampleRate);
-    delayGroup.update(*delayTime/1000, *delayModDepth/1000, *delayModFrequency, *spacing/1000, *delayLines);
+    int visualBufferSize = 200000; //samples
+    
+    inBuffer.zero(visualBufferSize);
+    midBuffer.zero(visualBufferSize);
+    outBuffer.zero(visualBufferSize);
 }
               
 void LushEngine::process(AudioBuffer<float>& buffer)
@@ -55,12 +66,21 @@ void LushEngine::process(AudioBuffer<float>& buffer)
     for (auto sample=0 ; sample<buffer.getNumSamples() ; sample ++)
     {
         auto dry = leftChannel[sample];
-        auto wet = delayGroup.getNextWet(leftDelayBuffer);
+        inBuffer.writeSample(dry);
         
-        leftDelayBuffer.writeSample(dry + wet * *delayFeedback);
+        auto wet = allpassFilters[0].getOutput(dry);
+        wet += allpassFilters[1].getOutput(wet);
+        wet += allpassFilters[2].getOutput(wet);
+        
+        midBuffer.writeSample(wet);
+        
+        wet = combFilters[0].getOutput(wet) +
+        combFilters[1].getOutput(wet) +
+        combFilters[2].getOutput(wet);
         
         leftChannel[sample] = dry * dryGainRamper.getNext() + wet * wetGainRamper.getNext();
         rightChannel[sample] = leftChannel[sample];
+        outBuffer.writeSample(leftChannel[sample]);
     }
 }
 
@@ -71,6 +91,5 @@ void LushEngine::parameterChanged(const String& parameterID, float newValue )
     } else if (parameterID == "wetGain") {
         wetGainRamper.updateTarget(Decibels::decibelsToGain(newValue));
     } else {
-        delayGroup.update(*delayTime/1000, *delayModDepth/1000, *delayModFrequency, *spacing/1000, *delayLines);
     }
 }

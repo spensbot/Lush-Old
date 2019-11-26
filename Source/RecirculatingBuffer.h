@@ -25,8 +25,12 @@ public:
     
     AudioBuffer<float> buffer;
     
+    
+    
 private:
+    
     void increment();
+    
     
     int writeIndex = 0;
     

@@ -37,7 +37,7 @@ private:
     MasterGainMixer masterGainMixer;
     DelaySettings delaySettings;
     
-    BufferDrawer bufferDrawer;
+    BufferDrawer inBufferDrawer, midBufferDrawer, outBufferDrawer;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Content)
 };

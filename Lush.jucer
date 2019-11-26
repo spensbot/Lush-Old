@@ -48,25 +48,38 @@
       <FILE id="Qcs6nl" name="SsDebugger.h" compile="0" resource="0" file="Source/SsDebugger.h"/>
     </GROUP>
     <GROUP id="{65C6EF51-4AE4-B06B-8DDA-12A6BF74CD03}" name="DSP">
+      <GROUP id="{A12F29A7-CAE4-D69B-8483-D932E6ABD2E8}" name="FIlters">
+        <FILE id="OGrWMk" name="AllpassFilter.cpp" compile="1" resource="0"
+              file="Source/AllpassFilter.cpp"/>
+        <FILE id="ePkavP" name="AllpassFilter.h" compile="0" resource="0" file="Source/AllpassFilter.h"/>
+        <FILE id="JUe7iw" name="CombFilter.cpp" compile="1" resource="0" file="Source/CombFilter.cpp"/>
+        <FILE id="Bl12E7" name="CombFilter.h" compile="0" resource="0" file="Source/CombFilter.h"/>
+        <FILE id="iAkqAO" name="DelayFilter.cpp" compile="1" resource="0" file="Source/DelayFilter.cpp"/>
+        <FILE id="eO0OVH" name="DelayFilter.h" compile="0" resource="0" file="Source/DelayFilter.h"/>
+        <FILE id="cQuMwx" name="FilterBase.cpp" compile="1" resource="0" file="Source/FilterBase.cpp"/>
+        <FILE id="i1mTyJ" name="FilterBase.h" compile="0" resource="0" file="Source/FilterBase.h"/>
+      </GROUP>
+      <GROUP id="{47DD1AC3-C809-5CE0-16F2-CBA44AB17CD7}" name="Low Level">
+        <FILE id="TWJwwk" name="RamperBase.cpp" compile="1" resource="0" file="Source/RamperBase.cpp"/>
+        <FILE id="lvnysq" name="RamperBase.h" compile="0" resource="0" file="Source/RamperBase.h"/>
+        <FILE id="WzaG2T" name="RamperLinear.cpp" compile="1" resource="0"
+              file="Source/RamperLinear.cpp"/>
+        <FILE id="QAEjC6" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
+        <FILE id="CgjrpI" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
+        <FILE id="uq20KR" name="RamperLinear.h" compile="0" resource="0" file="Source/RamperLinear.h"/>
+        <FILE id="FUdrKA" name="RecirculatingBuffer.cpp" compile="1" resource="0"
+              file="Source/RecirculatingBuffer.cpp"/>
+        <FILE id="c2U2IJ" name="RecirculatingBuffer.h" compile="0" resource="0"
+              file="Source/RecirculatingBuffer.h"/>
+        <FILE id="b7nd7U" name="RecirculatingBufferReader.cpp" compile="1"
+              resource="0" file="Source/RecirculatingBufferReader.cpp"/>
+        <FILE id="A5E61V" name="RecirculatingBufferReader.h" compile="0" resource="0"
+              file="Source/RecirculatingBufferReader.h"/>
+      </GROUP>
       <FILE id="ooAYxi" name="DelayGroup.cpp" compile="1" resource="0" file="Source/DelayGroup.cpp"/>
       <FILE id="F2vvtX" name="DelayGroup.h" compile="0" resource="0" file="Source/DelayGroup.h"/>
       <FILE id="dN5Gyq" name="LushEngine.cpp" compile="1" resource="0" file="Source/LushEngine.cpp"/>
       <FILE id="jgWzq5" name="LushEngine.h" compile="0" resource="0" file="Source/LushEngine.h"/>
-      <FILE id="QAEjC6" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
-      <FILE id="CgjrpI" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
-      <FILE id="TWJwwk" name="RamperBase.cpp" compile="1" resource="0" file="Source/RamperBase.cpp"/>
-      <FILE id="lvnysq" name="RamperBase.h" compile="0" resource="0" file="Source/RamperBase.h"/>
-      <FILE id="WzaG2T" name="RamperLinear.cpp" compile="1" resource="0"
-            file="Source/RamperLinear.cpp"/>
-      <FILE id="uq20KR" name="RamperLinear.h" compile="0" resource="0" file="Source/RamperLinear.h"/>
-      <FILE id="FUdrKA" name="RecirculatingBuffer.cpp" compile="1" resource="0"
-            file="Source/RecirculatingBuffer.cpp"/>
-      <FILE id="c2U2IJ" name="RecirculatingBuffer.h" compile="0" resource="0"
-            file="Source/RecirculatingBuffer.h"/>
-      <FILE id="b7nd7U" name="RecirculatingBufferReader.cpp" compile="1"
-            resource="0" file="Source/RecirculatingBufferReader.cpp"/>
-      <FILE id="A5E61V" name="RecirculatingBufferReader.h" compile="0" resource="0"
-            file="Source/RecirculatingBufferReader.h"/>
     </GROUP>
     <GROUP id="{9EFB3AAC-2422-C5CB-CFC2-F762CDECC0C8}" name="Synthesis">
       <FILE id="p9PIfg" name="WavetableGenerator.cpp" compile="1" resource="0"

@@ -33,7 +33,7 @@ void DelayGroup::update(float time, float depth, float frequency, float spacing,
     
     //Last, add any new delay lines with given properties.
     if (lines > delayOscillators.size()) {
-        for (auto i=0; i<lines-delayOscillators.size() ; i++){
+        for (auto i=0; i<=lines-delayOscillators.size() ; i++){
             float delayTime = time + i * spacing;// + spacing*random.nextFloat()/2;
             
             Oscillator<float>* newOscillator = new Oscillator<float>();
@@ -47,7 +47,7 @@ void DelayGroup::update(float time, float depth, float frequency, float spacing,
 float DelayGroup::getNextWet(RecirculatingBuffer& buffer)
 {
     float wet = 0.0f;
-    float weight = 1.0f / (float)delayOscillators.size();
+    float weight = 1.0f / delayOscillators.size();
     for (auto i=0 ; i<delayOscillators.size() ; i++) {
         float offsetSeconds = delayOscillators[i]->getSample();
         wet += delayBufferReader.getSample(buffer, offsetSeconds) * weight;

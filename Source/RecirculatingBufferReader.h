@@ -38,5 +38,5 @@ public:
     }
     
 private:
-    float sampleRate = 40000.0; //hertz
+    float sampleRate = 0.0; //hertz
 };

@@ -24,8 +24,9 @@ void RecirculatingBuffer::zero(int size){
 }
 
 void RecirculatingBuffer::writeSample(float sample){
-    increment();
     buffer.setSample(0, writeIndex, sample);
+    
+    increment();
 }
 
 float RecirculatingBuffer::getSample(int offsetSamples){

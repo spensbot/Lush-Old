@@ -10,10 +10,9 @@
 
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DelayGroup.h"
 #include "RamperLinear.h"
-#include "RecirculatingBuffer.h"
-#include "RecirculatingBufferReader.h"
+#include "CombFilter.h"
+#include "AllpassFilter.h"
 
 class LushEngine : private AudioProcessorValueTreeState::Listener {
 public:
@@ -26,15 +25,14 @@ public:
     
     void parameterChanged(const String& parameterID, float newValue ) override;
     
-    RecirculatingBuffer rightDelayBuffer, leftDelayBuffer;
+    RecirculatingBuffer inBuffer, midBuffer, outBuffer;
     
 private:
     
+    AllpassFilter allpassFilters[3];
+    CombFilter combFilters[3];
+    
     AudioProcessorValueTreeState& parameters;
-    
-    //Oscillator<float> delayTimeOscillator;
-    
-    DelayGroup delayGroup;
     
     float* dryDb,
     * wetDb,
@@ -46,7 +44,5 @@ private:
     * delayLines;
     
     RamperLinear dryGainRamper, wetGainRamper;
-    
-    double sampleRate;
 
 };

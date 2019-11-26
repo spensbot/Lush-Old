@@ -24,24 +24,31 @@ BufferDrawer::~BufferDrawer()
 
 void BufferDrawer::paint (Graphics& g)
 {
- 
-
     g.fillAll (Colours::black);
     
     int height = getHeight();
     float center = (float)height/2.0f;
     int width = getWidth();
     
-    int samplesPerPixel = buffer.getNumSamples() / width;
-    int nextStartSample = 0;
+    int samplesPerPixel = (numSamples>0 ? numSamples : buffer.getNumSamples()) / width;
+    int nextStartSample = startSample;
     
     for (int pixel=0 ; pixel<width ; pixel++){
         
         g.setColour (Colour::fromHSV((float)pixel/(float)width, 1.0, 1.0, 1.0));
         
-        float rms = buffer.getRMSLevel(0, nextStartSample, samplesPerPixel);
+        float peak;
         
-        float length = rms * center;
+        switch (type) {
+            case rms:
+                peak = buffer.getRMSLevel(0, nextStartSample, samplesPerPixel);
+                break;
+            case max:
+                peak = buffer.getMagnitude(nextStartSample, samplesPerPixel);
+                break;
+        }
+        
+        float length = peak * center;
         float startY = center - length;
         float endY = startY + length * 2.0f;
         
@@ -55,6 +62,11 @@ void BufferDrawer::paint (Graphics& g)
 void BufferDrawer::resized()
 {
     
+}
+
+void BufferDrawer::setWindow(int _startSample, int _numSamples){
+    startSample = _startSample;
+    numSamples = _numSamples;
 }
 
 void BufferDrawer::timerCallback() {

@@ -57,7 +57,7 @@ void LushEngine::setSampleRate(double _sampleRate)
     outBuffer.zero(visualBufferSize);
 }
               
-void LushEngine::process(AudioBuffer<float>& buffer)
+void LushEngine::process(AudioBuffer<float>& buffer, int startSample, int numSamples)
 {
     //Lush Engine is made to be run with 2 channels (left/right)
     auto* leftChannel = buffer.getWritePointer(0);

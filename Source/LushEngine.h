@@ -21,7 +21,7 @@ public:
     
     void setSampleRate(double);
                   
-    void process(AudioBuffer<float>& buffer);
+    void process(AudioBuffer<float>& buffer, int startSample, int numSamples);
     
     void parameterChanged(const String& parameterID, float newValue ) override;
     

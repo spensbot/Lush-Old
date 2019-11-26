@@ -37,6 +37,10 @@
               file="Source/MasterGainMixer.cpp"/>
         <FILE id="npacd2" name="MasterGainMixer.h" compile="0" resource="0"
               file="Source/MasterGainMixer.h"/>
+        <FILE id="Poiu4U" name="ResponseVisualizer.cpp" compile="1" resource="0"
+              file="Source/ResponseVisualizer.cpp"/>
+        <FILE id="L8EoFp" name="ResponseVisualizer.h" compile="0" resource="0"
+              file="Source/ResponseVisualizer.h"/>
       </GROUP>
       <FILE id="z0vyuS" name="Content.cpp" compile="1" resource="0" file="Source/Content.cpp"/>
       <FILE id="jSScP3" name="Content.h" compile="0" resource="0" file="Source/Content.h"/>

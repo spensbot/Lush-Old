@@ -18,16 +18,22 @@
 class BufferDrawer    : public Component, private Timer
 {
 public:
+    enum Type {max, rms};
     BufferDrawer(AudioBuffer<float>& buffer);
     ~BufferDrawer();
 
     void paint (Graphics&) override;
     void resized() override;
+    void setWindow(int startSample, int numSamples);
     
     void timerCallback () override;
+    
+    Type type = rms;
 
 private:
     AudioBuffer<float>& buffer;
+    int startSample = 0;
+    int numSamples = 0;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BufferDrawer)
 };

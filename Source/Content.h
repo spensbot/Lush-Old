@@ -16,6 +16,7 @@
 #include "MasterGainMixer.h"
 #include "DelaySettings.h"
 #include "BufferDrawer.h"
+#include "ResponseVisualizer.h"
 
 //==============================================================================
 /*
@@ -39,5 +40,6 @@ private:
     
     BufferDrawer inBufferDrawer, midBufferDrawer, outBufferDrawer;
     
+    ResponseVisualizer responseVisualizer;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Content)
 };

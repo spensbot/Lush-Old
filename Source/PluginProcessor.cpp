@@ -154,7 +154,7 @@ void LushAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& m
         buffer.clear (i, 0, buffer.getNumSamples());
     
     
-    lushEngine.process(buffer);
+    lushEngine.process(buffer, 0, buffer.getNumSamples());
 }
 
 //==============================================================================

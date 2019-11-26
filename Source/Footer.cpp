@@ -29,10 +29,10 @@ Footer::~Footer()
 
 void Footer::paint (Graphics& g)
 {
-    g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));   // clear the background
+    g.fillAll (Colours::black);   // clear the background
     
-    g.setColour(lushColors.border);
-    g.drawRect(getLocalBounds().removeFromTop(1));
+//    g.setColour(lushColors.border);
+//    g.drawRect(getLocalBounds().removeFromTop(1));
 }
 
 void Footer::resized()
